@@ -12,20 +12,21 @@ window.onload = function() {
   let what = ['eat','pissed','crushed','broked'];
   let when = ['before the class','right in time','when I finished','during my lunch','while I was praying'];
 
-  let  aleatorio = (max) => { 
-    let n = Math.round(Math.random() * (max-1));
-    console.log(n);
-    return n;
+  const  aleatorio = (max) => { 
+    return Math.round(Math.random() * (max-1));
   };
   
-  let who = () => {
-    let arr = ['the dog','my granma','his turtle','my bird'];
-    let n = aleatorio(arr.length);
-    return arr[n];
+  const componer = (parte) => {
+    const arr = {"who" :['the dog','my granma','his turtle','my bird'],
+                 "what":['eat','pissed','crushed','broked'],
+                 "when":['before the class','right in time','when I finished','during my lunch','while I was praying']
+                };
+
+    return arr[parte][aleatorio(arr[parte].length)];
   };
 
   const valor = window.document.querySelector("#excuse");
-  valor.textContent = who() +" "+ 
-                      what[aleatorio(what.length)] +' '+ 
-                      when[aleatorio(when.length)];
+  valor.textContent = componer('who')  +' '+ 
+                      componer('what') +' '+ 
+                      componer('when');
 };
