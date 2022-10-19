@@ -9,8 +9,8 @@ window.onload = function() {
   //write your code here
   // console.log("Hello Rigo from the console!");
   // let who = ['the dog','my granma','his turtle','my bird'];
-  let what = ['eat','pissed','crushed','broked'];
-  let when = ['before the class','right in time','when I finished','during my lunch','while I was praying'];
+  // let what = ['eat','pissed','crushed','broked'];
+  //let when = ['before the class','right in time','when I finished','during my lunch','while I was praying'];
 
   const  aleatorio = (max) => { 
     return Math.round(Math.random() * (max-1));
@@ -26,7 +26,12 @@ window.onload = function() {
   };
 
   const valor = window.document.querySelector("#excuse");
-  valor.textContent = componer('who')  +' '+ 
-                      componer('what') +' '+ 
-                      componer('when');
+  let texto = '<h2>' + componer('who')  +' '+ 
+                       componer('what') +' '+ 
+                       componer('when') +' '+ 
+              '</h2>';
+
+
+  valor.innerHTML = texto;
+  //valor.textContent = texto;
 };
